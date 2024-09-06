@@ -1,12 +1,13 @@
-import { createContext, useEffect, useRef, useState } from 'react'
+import { KameleoonClient, type SDKParameters } from '@kameleoon/javascript-sdk'
+import { createContext, useEffect, useMemo, useRef, useState } from 'react'
 
 import { useOnlineStatus } from '@/hooks/use-online-status'
-import { KameleoonClient } from '@kameleoon/javascript-sdk'
 
 export interface KameleoonProviderProps {
   children: React.ReactNode
   enabled: boolean
   siteCode: string
+  config?: Omit<SDKParameters, 'siteCode'>
 }
 
 export const KameleoonContext = createContext<{
@@ -14,9 +15,10 @@ export const KameleoonContext = createContext<{
   queueRef: React.MutableRefObject<Record<string, any[]>>
 } | null>(null)
 
-export function KameleoonProvider({ children, enabled, siteCode }: KameleoonProviderProps) {
+export function KameleoonProvider({ children, enabled, siteCode, config = {} }: KameleoonProviderProps) {
   const [client, setClient] = useState<KameleoonClient | null>(null)
   const isOnline = useOnlineStatus()
+  const parameters = useMemo(() => ({ siteCode, ...config }), [siteCode, config])
   const queueRef = useRef<Record<string, any[]>>({
     trackConversion: [],
     addData: [],
@@ -24,16 +26,17 @@ export function KameleoonProvider({ children, enabled, siteCode }: KameleoonProv
     setLegalConsent: [],
   })
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (enabled) {
       const initClient = async () => {
-        const newClient = new KameleoonClient({ siteCode })
+        const newClient = new KameleoonClient(parameters)
         await newClient.initialize()
         setClient(newClient)
       }
       initClient()
     }
-  }, [enabled, siteCode])
+  }, [enabled])
 
   useEffect(() => {
     if (client && isOnline) {
