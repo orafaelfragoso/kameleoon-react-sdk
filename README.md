@@ -1,4 +1,4 @@
-# React Kameleoon SDK
+# Kameleoon React SDK
 
 [![npm version](https://img.shields.io/npm/v/kameleoon-react-sdk.svg)](https://www.npmjs.com/package/kameleoon-react-sdk) 
 [![Coverage Status](https://coveralls.io/repos/github/orafaelfragoso/kameleoon-react-sdk/badge.svg?branch=main)](https://coveralls.io/github/orafaelfragoso/kameleoon-react-sdk?branch=main)
@@ -33,19 +33,19 @@ To install the React Kameleoon SDK, use one of the following commands:
 ### Using npm
 
 ```bash
-npm install react-kameleoon-sdk
+npm install kameleoon-react-sdk
 ```
 
 ### Using Yarn
 
 ```bash
-yarn add react-kameleoon-sdk
+yarn add kameleoon-react-sdk
 ```
 
 ### Using pnpm
 
 ```bash
-pnpm add react-kameleoon-sdk
+pnpm add kameleoon-react-sdk
 ```
 
 No additional configuration is required after installation.
@@ -59,7 +59,7 @@ The `KameleoonProvider` component initializes the Kameleoon client and provides 
 #### Example for Next.js
 
 ```jsx
-import { KameleoonProvider } from 'react-kameleoon-sdk';
+import { KameleoonProvider } from 'kameleoon-react-sdk';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -79,7 +79,7 @@ The `useKameleoon` hook provides access to various Kameleoon functionalities wit
 #### Example Usage
 
 ```jsx
-import { useKameleoon } from 'react-kameleoon-sdk';
+import { useKameleoon } from 'kameleoon-react-sdk';
 
 function MyComponent() {
   const { isFeatureFlagActive } = useKameleoon();
@@ -99,7 +99,7 @@ The `KameleoonScript` component dynamically loads the Kameleoon script, with sup
 #### Example for Next.js
 
 ```jsx
-import { KameleoonScript } from 'react-kameleoon-sdk';
+import { KameleoonScript } from 'kameleoon-react-sdk';
 import Script from 'next/script';
 
 function App() {
