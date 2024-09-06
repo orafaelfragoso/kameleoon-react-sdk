@@ -1,0 +1,55 @@
+{
+  "name": "kameleoon-react-sdk",
+  "version": "0.1.0",
+  "description": "A better Kameleoon.com React SDK",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "lint": "biome check .",
+    "format": "biome format . --write",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@kameleoon/javascript-sdk": "^3.4.7"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^10.3.3",
+    "@semantic-release/npm": "^12.0.1",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^16.0.1",
+    "@types/node": "^22.5.4",
+    "@types/react": "^18.3.5",
+    "@vitest/coverage-v8": "^2.0.5",
+    "jsdom": "^25.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "semantic-release": "^24.1.0",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.3",
+    "vitest": "^2.0.5"
+  },
+  "keywords": [
+    "kameleeon",
+    "react",
+    "sdk",
+    "nextjs",
+    "ab testing"
+  ],
+  "author": "Rafael Fragoso",
+  "license": "MIT"
+}

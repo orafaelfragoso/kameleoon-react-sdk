@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  pull_request:
+    branches: ["*"]
+  push:
+    branches:
+      - main
+  merge_group:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Run Biome
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup
+      - run: pnpm lint
+  
+  type-check:
+    runs-on: ubuntu-latest
+    name: TypeScript Type Check
+    needs: lint
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup
+      - run: pnpm typecheck
+
+  coverage:
+    runs-on: ubuntu-latest
+    name: Run Tests
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup
+
+      - name: Run tests and generate coverage report
+        run: pnpm coverage
+
+      - name: Upload coverage to Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: ./coverage/lcov.info
+          parallel: true
