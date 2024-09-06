@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from 'tsup'
 
 export default defineConfig({
   entry: ['src/index.tsx'],
@@ -10,5 +10,5 @@ export default defineConfig({
   outDir: 'dist',
   sourcemap: true,
   minify: true,
-  external: ['react', 'react-dom']
-});
+  external: ['react', 'react-dom'],
+})
