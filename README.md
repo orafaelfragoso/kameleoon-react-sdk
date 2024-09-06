@@ -171,4 +171,3 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 ## Author
 
 This project was created by [Rafael Fragoso](mailto:rafael.fragoso@hurb.com). For more details, visit the [repository](https://github.com/orafaelfragoso/kameleoon-react-sdk).
-```

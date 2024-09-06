@@ -43,6 +43,7 @@
     "vite": "^5.4.3",
     "vitest": "^2.0.5"
   },
+  "packageManager": "pnpm@8.15.6",
   "keywords": [
     "kameleeon",
     "react",
