@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: ['src/index.tsx'],
+  entry: ['src/index.ts'],
   format: ['cjs', 'esm'],
   dts: {
     entry: 'src/index.ts',
@@ -10,5 +10,6 @@ export default defineConfig({
   outDir: 'dist',
   sourcemap: true,
   minify: true,
+  clean: true,
   external: ['react', 'react-dom'],
 })
