@@ -3,8 +3,7 @@
 [![NPM Version](https://img.shields.io/npm/v/kameleoon-react-sdk)](https://www.npmjs.com/package/kameleoon-react-sdk) 
 [![Coveralls](https://img.shields.io/coverallsCoverage/github/orafaelfragoso/kameleoon-react-sdk)
 ](https://coveralls.io/github/orafaelfragoso/kameleoon-react-sdk?branch=main)
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/orafaelfragoso/kameleoon-react-sdk/release.yml)
-]
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/orafaelfragoso/kameleoon-react-sdk/release.yml)
 
 The React Kameleoon SDK is a React-based wrapper for the Kameleoon JavaScript SDK, designed to streamline integration with React applications. It offers a simplified and type-safe way to interact with Kameleoon's features while addressing some limitations of the official React SDK. Key features include client initialization, offline support, improved typing, error tracking, and a customizable script component.
 
